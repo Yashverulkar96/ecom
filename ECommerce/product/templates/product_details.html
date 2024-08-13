@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h1>{{ product.name }}</h1>
+            <p>{{ product.description }}</p>
+            <p><strong>Price:</strong> ${{ product.price }}</p>
+            <p><strong>Category:</strong> {{ product.category.name }}</p>
+            <p><strong>Stock:</strong> {{ product.stock }}</p>
+            <i class="fas fa-heart" style="margin-right: 20px;"></i> 
+            <a href="{% url 'add_to_cart' product.id %}" class="btn btn-success">Add to Cart</a>
+            {% comment %} <a href="products_cart.html" class="btn btn-success">Add to Cart</a> {% endcomment %}
+            <a href="#" class="btn btn-success">Buy Now</a>
+
+            {% comment %} <button class="btn btn-success" style="margin-right: 20px">Add to Cart</button>
+            <button class="btn btn-success">Buy Now</button> {% endcomment %}
+        </div>
+    </div>
+</div>
+{% endblock %}
